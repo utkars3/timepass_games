@@ -9,7 +9,7 @@ const GameDetails = () => {
 
     const fetchGameById = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/game/${gameId}`);
+            const response = await axios.get(`https://timepass-games-vqp3.onrender.com/api/game/${gameId}`);
             setGame(response.data);
             setError('');
             setEditMode(false);
@@ -26,7 +26,7 @@ const GameDetails = () => {
 
     const updateGame = async () => {
         try {
-            await axios.put(`http://localhost:5000/api/game/${gameId}`, game);
+            await axios.put(`https://timepass-games-vqp3.onrender.com/api/game/${gameId}`, game);
             alert('Game updated successfully');
             setEditMode(false);
         } catch (err) {

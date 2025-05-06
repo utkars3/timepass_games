@@ -7,7 +7,7 @@ const GameList = () => {
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/games');
+                const response = await axios.get('https://timepass-games-vqp3.onrender.com/api/games');
                 setGames(response.data);
             } catch (error) {
                 console.error("Failed to fetch games", error);
@@ -19,7 +19,7 @@ const GameList = () => {
     const deleteGame = async (id) => {
         if (window.confirm('Are you sure you want to delete this game?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/game/${id}`);
+                await axios.delete(`https://timepass-games-vqp3.onrender.com/api/game/${id}`);
                 setGames(games.filter(game => game._id !== id));
                 alert('Game deleted successfully');
             } catch (error) {

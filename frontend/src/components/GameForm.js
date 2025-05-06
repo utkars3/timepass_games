@@ -11,7 +11,7 @@ const GameForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newGame = { name, url, author, publishedDate };
-        await axios.post('http://localhost:5000/api/game', newGame);
+        await axios.post('https://timepass-games-vqp3.onrender.com/api/game', newGame);
     };
 
     return (
